@@ -184,7 +184,7 @@ int IntBST::getPredecessor(int value) const{
 	    return p->info;
     }
     else{
-	    return -1;
+	    return 0;
     }
 }
 
@@ -217,7 +217,7 @@ int IntBST::getSuccessor(int value) const{
             return p->info;
     }
     else{
-            return -1;
+            return 0;
     }
 }
 
