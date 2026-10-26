@@ -36,19 +36,19 @@ int main() {
  
     check("predecessor of 50 is 40", t.getPredecessor(50) == 40);
     check("predecessor of 70 is 60", t.getPredecessor(70) == 60);
-    check("predecessor of 20 is none", t.getPredecessor(20) == -1);
+    check("20 has no predecessor", t.getPredecessor(20) == -1);
  
     check("successor of 50 is 60", t.getSuccessor(50) == 60);
     check("successor of 20 is 30", t.getSuccessor(20) == 30);
     check("80 has no successor", t.getSuccessor(80) == -1);
  
-    check("remove leaf 20", t.remove(20) && !t.contains(20));
+    check("remove 20", t.remove(20) && !t.contains(20));
     check("trying to remove 99 returns false", !t.remove(99));
     t.insert(65);
     check("remove node with one child (60)", t.remove(60) && !t.contains(60) && t.contains(65));
     check("remove node with two children (50)", t.remove(50) && !t.contains(50));
  
-    cout << "\nInOrder after removals (expect 30 40 65 70 80): ";
+    cout << "\nInOrder after removals (should be 30 40 65 70 80): ";
     t.printInOrder();
     cout << "\n";
     check("count == 5 after removals", t.count() == 5);
